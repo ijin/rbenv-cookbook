@@ -33,6 +33,7 @@ user node[:rbenv][:user] do
   shell "/bin/bash"
   group node[:rbenv][:group]
   supports :manage_home => node[:rbenv][:manage_home]
+  not_if "grep -q '^#{node[:rbenv][:user]}:x:' /etc/passwd"
 end
 
 directory node[:rbenv][:root] do
