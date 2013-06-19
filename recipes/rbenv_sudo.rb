@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: rbenv
-# Recipe:: rbenv_vars
+# Recipe:: rbenv_sudo
 #
 # Author:: Deepak Kannan (<kannan.deepak@gmail.com>)
 #
@@ -24,7 +24,7 @@ include_recipe "git"
 plugin_path = "#{node[:rbenv][:root]}/plugins/rbenv-sudo"
 
 git plugin_path do
-  repository node[:rbenv_vars][:git_repository]
-  reference  node[:rbenv_vars][:git_revision]
+  repository node[:rbenv_sudo][:git_repository]
+  reference  node[:rbenv_sudo][:git_revision]
   action :sync
 end
