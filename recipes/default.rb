@@ -39,7 +39,7 @@ end
 directory node[:rbenv][:root] do
   owner node[:rbenv][:user]
   group node[:rbenv][:group]
-  mode "0775"
+  mode "02775"
 end
 
 git node[:rbenv][:root] do
@@ -79,7 +79,7 @@ end
   directory "#{node[:rbenv][:root]}/#{dir_name}" do
     owner node[:rbenv][:user]
     group node[:rbenv][:group]
-    mode "0775"
+    mode "02775"
     action [:create]
   end
 end
